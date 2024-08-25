@@ -1,0 +1,95 @@
+#target photoshop
+
+function sortLayersAlphanumerically() {
+    var doc = app.activeDocument;
+    var layers = [];
+    var cancel = false;
+
+    // Create a progress dialog
+    var progressWindow = new Window("palette", "Sorting Progress");
+    progressWindow.progressBar = progressWindow.add("progressbar", [0, 0, 300, 20], 0, 100);
+    progressWindow.progressBar.label = progressWindow.add("statictext", [0, 20, 300, 40], "Sorting...");
+    progressWindow.cancelButton = progressWindow.add("button", [0, 40, 100, 60], "Cancel");
+
+    // Show the progress window
+    progressWindow.show();
+
+    // Function to check for cancellation
+    function checkForCancel() {
+        if (cancel) {
+            progressWindow.close();
+            alert("Sorting cancelled.");
+            return true;
+        }
+        return false;
+    }
+
+    // Attach the cancel button's click event handler
+    progressWindow.cancelButton.onClick = function() {
+        cancel = true;
+    };
+
+    // Collect all layers and their indices
+    function collectLayers(layerSet, layersArray) {
+        for (var i = 0; i < layerSet.layers.length; i++) {
+            if (checkForCancel()) {
+                return; // Exit if canceled
+            }
+
+            var layer = layerSet.layers[i];
+            if (layer.typename === "ArtLayer") {
+                layersArray.push({
+                    name: layer.name,
+                    layer: layer,
+                    index: layer.index
+                });
+            } else if (layer.typename === "LayerSet") {
+                collectLayers(layer, layersArray); // Recursively collect layers from layer sets
+            }
+        }
+    }
+
+    collectLayers(doc, layers);
+
+    // Sort layers array alphanumerically
+    layers.sort(function(a, b) {
+        var nameA = a.name;
+        var nameB = b.name;
+
+        // Extract leading numbers and letters
+        var numA = parseInt(nameA, 10);
+        var numB = parseInt(nameB, 10);
+
+        // Compare numbers first, then letters
+        if (!isNaN(numA) && !isNaN(numB)) {
+            return numA - numB;
+        } else if (!isNaN(numA)) {
+            return -1; // Numbers come first
+        } else if (!isNaN(numB)) {
+            return 1; // Numbers come first
+        } else {
+            return nameA.localeCompare(nameB);
+        }
+    });
+
+    // Reorder layers in the document
+    for (var i = 0; i < layers.length; i++) {
+        if (checkForCancel()) {
+            return; // Exit if canceled
+        }
+
+        // Move the layer to the end of the document
+        layers[i].layer.move(doc, ElementPlacement.PLACEATEND);
+
+        // Update progress bar
+        progressWindow.progressBar.value = (i + 1) / layers.length * 100;
+        progressWindow.progressBar.label.text = "Sorting layer " + (i + 1) + " of " + layers.length;
+    }
+
+    if (!checkForCancel()) {
+        progressWindow.close();
+        alert("Layers sorted alphanumerically!");
+    }
+}
+
+sortLayersAlphanumerically();
