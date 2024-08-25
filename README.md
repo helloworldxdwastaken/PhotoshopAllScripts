@@ -1,9 +1,11 @@
 
 
-## GENERAL INFO:
+# GENERAL INFO:
 _These scripts are made to make life easier for designers or
 just ppl who want to make their life easier while working with photoshop_
 
+
+#SCRIPS 
 
 
 ## ExpAll Script
