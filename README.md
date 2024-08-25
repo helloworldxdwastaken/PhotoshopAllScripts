@@ -1,8 +1,8 @@
 
 
 ## GENERAL INFO:
-These scripts are made to make life easier for designers or
-just ppl that want to make their life easier while working with photoshop
+_These scripts are made to make life easier for designers or
+just ppl who want to make their life easier while working with photoshop_
 
 
 
@@ -13,7 +13,7 @@ _Simple script to export all layers in a project with all effects applied, the s
 
 ## LayerSort Script
 
-_Sort all layers into alhpanumerical order making ur project more organized
+_Sort all layers into alhpanumerical order making ur project more organized_
 
 
 # How To Use
