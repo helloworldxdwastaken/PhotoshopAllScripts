@@ -11,7 +11,7 @@ you can run it from Photoshop by navigating to File > Scripts > Browse... and se
 
 ExpAll
 
-
+Simple script to export all layers in a project with all effects applied, the script also export all layers in the same order as they were in the project and the same name
 
 
 LayerSort
