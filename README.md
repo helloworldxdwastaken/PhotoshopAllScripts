@@ -16,8 +16,7 @@ just ppl who want to make their life easier while working with photoshop_
 3 - you can run it from Photoshop by navigating to File > Scripts > Browse... and selecting your script file.
 
 
-# SCRIPS 
-
+# Scripts
 
 ## ExpAll Script
 
