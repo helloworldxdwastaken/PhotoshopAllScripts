@@ -5,6 +5,7 @@ Windows: _C:\Program Files\Adobe\Adobe Photoshop [version]\Presets\Scripts_
 
 Mac: _/Applications/Adobe Photoshop [version]/Presets/Scripts/_
 
+> [!IMPORTANT]
 **RESTART PHOTOSHOP!**
 
 you can run it from Photoshop by navigating to File > Scripts > Browse... and selecting your script file.
