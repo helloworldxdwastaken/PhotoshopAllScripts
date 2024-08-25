@@ -1,3 +1,5 @@
+> [!NOTE]
+
 # GENERAL INFO :
 Download and place the files in the next folder:
 
