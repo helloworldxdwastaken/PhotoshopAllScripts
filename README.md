@@ -1,4 +1,4 @@
-> [!NOTE]
+
 
 # GENERAL INFO :
 Download and place the files in the next folder:
@@ -20,4 +20,7 @@ _Simple script to export all layers in a project with all effects applied, the s
 
 ## LayerSort
 
-_Sort all layers into alhpanumerical order making ur project more organized_
+_Sort all layers into alhpanumerical order making ur project more organized
+
+> [!NOTE]
+> Please use this wisely and if you have any improvement just share it with me to make it available to others
