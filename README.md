@@ -1,5 +1,6 @@
 
 Download and place the file in the next folder:
+
 Windows: C:\Program Files\Adobe\Adobe Photoshop [version]\Presets\Scripts\
 Mac: /Applications/Adobe Photoshop [version]/Presets/Scripts/
 
